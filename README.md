@@ -1,19 +1,20 @@
-# AI Code Reviewer with Streamlit and LangChain
+# Conversational AI Data Science Tutor with Streamlit and LangChain
 
-This project is an AI-powered code reviewer built with Streamlit for an intuitive user interface and LangChain integrated with Google AI Studio for intelligent code analysis. It allows users to submit Python code and receive detailed feedback on potential bugs, errors, or suggestions for improvement, complete with code snippets for fixes.
+This project is an AI-powered data science tutor built with Streamlit for an intuitive conversational interface and LangChain integrated with Google AI Studio for intelligent, context-aware responses. It allows users to ask data science-related questions and receive detailed, educational answers, leveraging the conversation history for continuity.
 
 ## Features
 
-- User-friendly web interface for submitting code
-- AI-driven analysis powered by Google's Gemini 2.0 flash model
-- Detailed feedback with explanations and suggested fixes
+- User-friendly chat interface for asking questions
+- AI-driven responses powered by Google's Gemini 2.0 flash model
+- Context-aware answers that consider the full conversation history
+- Detailed explanations, examples, and additional resources for learning
 - Easy setup and local deployment
 
 ## Prerequisites
 
 Before setting up the project, ensure you have the following:
 
-- **Python 3.9or higher** installed on your system
+- **Python 3.9 or higher** installed on your system
 - A **Google AI Studio account** to obtain an API key
 
 ## Setup Instructions
@@ -21,7 +22,7 @@ Before setting up the project, ensure you have the following:
 Follow these steps to set up the project locally:
 
 1. **Obtain an API Key**  
-   - Sign up at [Google AI Studio](https://aistudio.google.com/apike/) and create a key 
+   - Sign up at [Google AI Studio](https://aistudio.google.com/apike/) and create a key.  
    - Generate an API key for the Gemini API.
 
 2. **Set the Environment Variable**  
@@ -38,7 +39,7 @@ Follow these steps to set up the project locally:
 3. **Install Required Packages**  
    - Install the necessary Python packages using pip:  
      ```bash
-     pip install streamlit langchain-google-genai
+     pip install langchain langchain-core langchain-google-genai streamlit 
      ```
 
 ## Running the App
@@ -54,40 +55,26 @@ Once the setup is complete, follow these steps to run the application:
 
 ## Usage
 
-Here’s how to use the AI Code Reviewer:
+Here’s how to use the Conversational AI Data Science Tutor:
 
-1. **Paste Your Code**: In the app’s text area, enter the Python code you want reviewed.  
-2. **Review the Code**: Click the "Review Code" button.  
-3. **View Feedback**: The AI will analyze your code and display feedback in markdown format, including explanations and suggested fixes with code snippets.
+1. **Ask a Question**: In the app’s chat input, type your data science-related question (e.g., "What is the difference between supervised and unsupervised learning?").  
+2. **Get a Response**: The AI will analyze your question in the context of the conversation history and provide a detailed, educational response.
 
 ### Example
 
-**Input Code:**  
-```python
-def factorial(n):
-    if n == 1:
-        return 1
-    else:
-        return n * factorial(n)
-```
+**User Query:**  
+"What is the difference between supervised and unsupervised learning?"
 
 **Expected Output:**  
 ```
-### Issue 1: Infinite Recursion
-**Explanation:** The recursive call `factorial(n)` does not decrease the input, causing infinite recursion and a stack overflow.  
-**Suggested Fix:**  
-```python
-def factorial(n):
-    if n == 1:
-        return 1
-    else:
-        return n * factorial(n-1)
+### Supervised vs. Unsupervised Learning  
+**Supervised Learning:** Involves training a model on labeled data, where the input-output pairs are known. The goal is to predict the output for new inputs. Examples include regression and classification.  
+**Unsupervised Learning:** Involves training a model on unlabeled data to find hidden patterns or structures. Common tasks include clustering and dimensionality reduction.
 ```
-
 
 ## Customization
 
-- Modify the prompt template in the `app.py` file to tweak the AI’s review focus (e.g., emphasizing performance or readability).
+- Modify the system prompt in the `app.py` file to adjust the AI’s behavior or focus (e.g., emphasizing certain data science topics or adjusting the explanation complexity).
 
 ## Security
 
@@ -104,7 +91,6 @@ def factorial(n):
 Contributions are welcome! Feel free to submit pull requests with bug fixes, new features, or improvements.
 
 ---
-
 
 **License**  
 This project is licensed under the MIT License.
